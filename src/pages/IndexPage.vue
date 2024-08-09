@@ -1,59 +1,46 @@
 <template>
-  <q-page class="column flex-center">
-    <q-knob
-      v-model="count"
-      :min="min"
-      :max="max"
-      size="80px"
-      show-value
-      :thickness="0.13"
-      color="primary"
-      track-color="dark"
-    >
-      <q-avatar size="75px">
-        <img alt="Quasar logo" src="~assets/quasar-logo-inner.svg" />
-      </q-avatar>
-    </q-knob>
+  <q-page class="flex flex-center text-textheader">
 
-    <img
-      alt="Quasar logo"
-      src="~assets/quasar-logo-vertical.svg"
-      style="width: 200px; height: 140px"
-    />
-
-    <div class="q-mt-xl">
-      <q-btn
-        color="primary"
-        dense
-        round
-        label="-"
-        :disable="count === min"
-        @click="count--"
-      />
-
-      <span class="q-mx-md text-bold">{{ count }}</span>
-
-      <q-btn
-        color="primary"
-        dense
-        round
-        label="+"
-        :disable="count === max"
-        @click="count++"
-      />
+    <div class="row full-width">
+      <div class="col text-center text-h3 text-weight-bolder">
+      Choose A Gamemode
+      </div>
     </div>
 
-    <div class="q-mt-md" style="width: 200px">
-      <q-slider v-model="count" :min="min" :max="max" />
+    <div class="row full-width">
+      <div class="col text-center text-h4 text-weight-bolder q-pb-xl">
+      3 Buttons
+      </div>
     </div>
+
+        <div class="row full-width">
+      <div class="col text-center text-h3 text-weight-bolder q-pb-xl">
+      Choose Your Difficulty
+      </div>
+    </div>
+
+            <div class="row full-width">
+      <div class="col text-center text-weight-bolder q-gutter-sm">
+
+        <q-btn unelevated color="accent" label="Easy" size="lg" @click="mode = easy"/>
+        <q-btn unelevated color="accent" label="Medium" size="lg" @click="mediummode = true"/>
+        <q-btn unelevated color="accent" label="Hard" size="lg" @click="hardmode = true"/>
+        <q-btn unelevated color="accent" label="Master" size="lg" @click="mastermode = true"/>
+<br>
+<br>
+        <q-btn unelevated color="accent" label="Go!" size="xl" padding="xl" :disable="mode = none"/>
+
+      </div>
+    </div>
+
+            <div class="row full-width">
+      <div class="col text-center text-h3 text-weight-bolder q-pb-xl">
+      mode
+      </div>
+    </div>
+    
   </q-page>
 </template>
 
 <script setup>
-import { ref } from 'vue';
-
-const count = ref(0);
-
-const min = -5;
-const max = 5;
 </script>
